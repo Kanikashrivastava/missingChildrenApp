@@ -1,0 +1,15 @@
+import React, { Component } from "react";
+import "/home/kanika/Desktop/missingchild/src/App.css";
+import Slider from "./slide"
+class MainPage extends Component {
+  render() {
+    return (
+      <div className="App">
+        <Slider/>
+
+      </div>
+    );
+  }
+}
+
+export default MainPage;
