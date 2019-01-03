@@ -100,11 +100,12 @@ class SignUp extends React.Component {
             console.log( res );
             console.log( res.data );
             console.log('its done!')
+            this.renderRedirect();
         })
         .catch((err) => {
             console.log(err);
         });
-        this.renderRedirect();
+        
     }
 
   renderRedirect = () => {
@@ -213,10 +214,11 @@ class SignUp extends React.Component {
               >
                 Sign in
             </Button>
+            {/* {this.renderRedirect()} */}
             <Typography>Already SignUp! <a href="/login">Sign In</a></Typography>
             </form>
           </Paper>
-          {/* {this.renderRedirect()} */}
+          
         </main>
       </React.Fragment>
     );

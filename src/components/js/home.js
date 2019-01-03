@@ -7,13 +7,16 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
+import { DarkRawTheme } from "material-ui/styles";
 
 const styles = {
   root: {
     flexGrow: 1
   },
   grow: {
-    flexGrow: 1
+    flexGrow: 1,
+    color: "white",
+    fontSize: "3vh"
   },
   menuButton: {
     marginLeft: -12,
@@ -34,16 +37,16 @@ function ButtonAppBar(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" color="inherit" className={classes.grow}>
-          <a href="/">
+          <Button color="inherit" className={classes.grow}>
+          <a href="/" className={classes.grow}>
             Home
           </a>
-          </Typography>
-          <Button color="inherit">
-            <a href="/login">Login</a>
+          </Button>
+          <Button color="inherit" >
+            <a href="/login" className={classes.grow}>Login</a>
           </Button>
           <Button color="inherit">
-            <a href="/signup">Register</a>
+            <a href="/signup" className={classes.grow}>Register</a>
           </Button>
         </Toolbar>
       </AppBar>

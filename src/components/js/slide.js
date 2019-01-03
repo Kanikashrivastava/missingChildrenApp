@@ -15,7 +15,6 @@ import Avatar from "@material-ui/core/Avatar";
 import blue from "@material-ui/core/colors/blue";
 import red from "@material-ui/core/colors/red";
 import MissingChildForm from "./form.js";
-import ChildDetailCard from "./childernData.js";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
