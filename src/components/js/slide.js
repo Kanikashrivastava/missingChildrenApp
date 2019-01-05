@@ -54,7 +54,8 @@ const styles = theme => ({
   card: {
     height: theme.spacing.unit * 20,
     width: theme.spacing.unit * 30,
-    textDecoration: 'none',
+    textDecoration: "none",
+    cursor: "pointer"
   },
 
   avatar: {
@@ -74,6 +75,18 @@ const styles = theme => ({
   div: {
     display: "flex",
     justifyContent: "space-around"
+  },
+  message: {
+    fontWeight: "bold",
+    color: "#990000",
+    marginRight: theme.spacing.unit * 10,
+    marginLeft: theme.spacing.unit * 5,
+    fontSize: "3vh"
+  },
+  marquee: {
+    marginLeft: theme.spacing.unit * 20,
+    fontStyle: "italic",
+    fontSize: "3vh"
   }
 });
 
@@ -105,7 +118,12 @@ class Slider extends React.Component {
     return (
       <div className={classes.root}>
         <Paper square elevation={0} className={classes.header}>
-          <Typography>{image_links[activeStep].label}</Typography>
+          <Typography className={classes.message}>MESSAGE</Typography>
+          <marquee>
+            <Typography className={classes.marquee}>
+              You are advised to inform the nearest police station. You may contact police at 100 or CHILDLINE at 1098.
+            </Typography>
+          </marquee>
         </Paper>
         <AutoPlaySwipeableViews
           axis={theme.direction === "rtl" ? "x-reverse" : "x"}

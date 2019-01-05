@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import Modal from '@material-ui/core/Modal';
+import React from "react";
+import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
+import Typography from "@material-ui/core/Typography";
+import Modal from "@material-ui/core/Modal";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import Avatar from "@material-ui/core/Avatar";
@@ -10,30 +10,44 @@ import blue from "@material-ui/core/colors/blue";
 import Button from "@material-ui/core/Button";
 import axios from "axios";
 
-
-
 const styles = theme => ({
   paper: {
-    position: 'fixed',
-    top: "30%",
-    left: "20%",
-    width: "50%",
-    backgroundColor: theme.palette.background.paper,
+    position: "static",
+    width: theme.spacing.unit * 60,
+    backgroundColor: "#efca94",
     boxShadow: theme.shadows[5],
-    padding: theme.spacing.unit * 4,
+    padding: "15px 15px 15px 15px",
+    margin: "10% 10% 5% 25%" ,
+    textAlign: "center"
   },
   card: {
     height: theme.spacing.unit * 20,
-    width: theme.spacing.unit * 30
+    width: theme.spacing.unit * 30,
+    cursor: "pointer"
   },
 
   avatar: {
     backgroundColor: blue[500],
     height: theme.spacing.unit * 15,
     width: theme.spacing.unit * 15,
-    marginLeft: '35px',
+    marginLeft: "35px"
   },
-
+  title: {
+    color: "red",
+    fontWeight: "bold"
+  },
+  inputName: {
+    borderRadius: "2%",
+    height: "5vh"
+  },
+  childDescription: {
+    borderRadius: "2%",
+    height: "7vh"
+  },
+  avatar1: {
+    marginLeft: theme.spacing.unit * 10,
+    marginBottom: theme.spacing.unit * 10
+  }
 });
 
 class MissingChildForm extends React.Component {
@@ -88,42 +102,52 @@ class MissingChildForm extends React.Component {
     return (
       <div>
         <Card className={classes.card}>
-            <CardHeader
-              avatar={
-                <Avatar aria-label="Recipe" className={classes.avatar}>
-                  My child is missing
-                </Avatar>
-              }
-              onClick={this.handleOpen}
-            />
-          </Card>
+          <CardHeader
+            avatar={
+              <Avatar aria-label="Recipe" className={classes.avatar}>
+                My child is missing
+              </Avatar>
+            }
+            onClick={this.handleOpen}
+          />
+        </Card>
         <Modal
           aria-labelledby="simple-modal-title"
           aria-describedby="simple-modal-description"
           open={this.state.open}
           onClose={this.handleClose}
+          className={classes.modal}
         >
           <div className={classes.paper}>
-            <Typography variant="h6" id="modal-title">
+            <Typography variant="h4" id="modal-title" className={classes.title}>
               Missing child
             </Typography>
-            <input type="file" onChange={this.fileSelectedHandler} /><br/>
+            <input type="file" className={classes.avatar1} onChange={this.fileSelectedHandler} />
+            <br />
+
+            <Typography>Name</Typography>
             <input
-                  type="text"
-                  name="missingChildName"
-                  placeholder="Name"
-                  className="form-control"
-                  value={this.state.missingChildName}
-                  onChange={this.fileSelectedHandler}
-                />
-                <Typography>Description</Typography>
-                <textarea
-                  name="Description"
-                  className="form-control custom-contol"
-                  value={this.state.Description}
-                  onChange={this.fileSelectedHandler}
-                />
-                <Button onClick={this.fileUploadHandler}>Submit</Button>
+              type="text"
+              name="missingChildName"
+              placeholder="Name"
+              className={classes.inputName}
+              value={this.state.missingChildName}
+              onChange={this.fileSelectedHandler}
+            />
+            <Typography>Description</Typography>
+            <textarea
+              name="Description"
+              className={classes.childDescription}
+              value={this.state.Description}
+              onChange={this.fileSelectedHandler}
+            /><br/>
+            <Button
+              variant="contained"
+              className={classes.button}
+              onClick={this.fileUploadHandler}
+            >
+              Submit
+            </Button>
           </div>
         </Modal>
       </div>
@@ -132,7 +156,7 @@ class MissingChildForm extends React.Component {
 }
 
 MissingChildForm.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
 // We need an intermediary variable for handling the recursive nesting.

@@ -21,7 +21,8 @@ const styles = theme => ({
     marginLeft: theme.spacing.unit * 7,
     marginTop: theme.spacing.unit * 5,
     backgroundColor: "#d9ddf5",
-    boxShadow: "2px 2px 4px 4px #414167"
+    boxShadow: "2px 2px 4px 4px #414167",
+
   },
   avatar: {
     height: theme.spacing.unit * 20,
