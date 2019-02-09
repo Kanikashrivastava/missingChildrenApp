@@ -1,12 +1,11 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## missingChildrenApp
 
-In the project directory, you can run:
 
 ### `clone it`
 
-git clone 
+Clone the project with the following command. <br>
+git clone git@github.com:Kanikashrivastava/missingChildrenApp.git
 
 ### `npm start`
 
